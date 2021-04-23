@@ -1,0 +1,31 @@
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="flex-grow-1 float-left">
+            <a aria-label="Home" class="logo" routerLink="/">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/0.png" height="30" alt="mdb logo">
+                  </a>
+                <span class="blog-text">
+                    Blog
+                </span>
+            </a>
+        </div>
+
+        <div class="flex-grow-1 float-right">
+            <div *ngIf="isLoggedIn" ngbDropdown class="float-right">
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button (click)="logout()" class="float-right login mr-2" ngbDropdownItem>Logout</button>
+                    <button (click)="goToUserProfile()" class="login mr-2" id="dropdownBasic1" ngbDropdownToggle>
+                        <img class="account-icon" src="assets/02.png">
+                        {{username}}
+                    </button>
+                </div>
+            </div>            
+            <div >
+                <a *ngIf="!isLoggedIn" routerLink="/sign-up" class="float-right sign-up mr-2">Sign up</a>
+                <a *ngIf="!isLoggedIn" routerLink="/log-in" class="float-right login mr-2">Login</a>
+                <a routerLink="/documentation" class="float-right documentation mr-2">API Documentation</a>
+            </div>
+        </div>
+    </nav>
+</header>

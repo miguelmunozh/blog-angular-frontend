@@ -1,0 +1,33 @@
+<div id="login">
+    <h3 class="text-center text-white pt-5">Log In</h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form  id="login-form" [formGroup]="loginForm" (ngSubmit)="login()" class="form">
+                        <div class="form-group">
+                            <label for="username" class="text-info">Username:</label><br>
+                            <input type="text" [formControlName]="'username'"  id="username" class="form-control" required autofocus>
+                            <!-- <span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">Provide a valid username</span> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password:</label><br>
+                            <input type="password" [formControlName]="'password'"  id="password" class="form-control" required autofocus>
+                            <!-- <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">Provide a valid password</span> -->
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="sign-up">
+                                Log In
+                            </button>
+                            <span style="padding-left: 15px">Create an account:  <a class="routerLink" routerLink="/sign-up">Sign Up</a></span>
+                        </div>
+                        <div class="login-failed" *ngIf='this.isError'>
+                            <p class="login-failed-text">Login Failed. Please check your credentials and try again.</p>   
+                       </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

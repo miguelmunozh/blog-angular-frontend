@@ -1,0 +1,47 @@
+<div class="blogsContainer">
+    <div class="header">
+        <h1>{{blogName}}'s Blog</h1>
+        <h5>My supercool header</h5>
+    </div>
+      <div class="row w-100">
+
+          <div class="col-md-3">
+            <div class="sidebar">
+                <h5>My supercool sidebar</h5>
+            </div>
+            <div class="sidebar-btn">
+                <button class="login mr-2 w-100 routerLink" routerLink="/Create-Comment/{{topicName}}/{{topicId}}/{{blogName}}/{{blogId}}">Create New Comment</button>
+            </div>
+            <div class="sidebar-btn">
+                <button class="w-100 routerLink login mr-2" routerLink="/home">Topics</button>
+            </div>
+            <div class="sidebar-btn">
+                <button class="w-100 routerLink login mr-2" routerLink="/get-blogs/{{topicName}}/{{topicId}}">Blogs</button>
+            </div>
+          </div>
+          
+        <div class="col-md-7">
+            <div class="container">
+                <hr>
+                <p>By <span class="username"> {{blogModel.userName}}</span> on {{blogModel.createdDate}}</p>
+                <p>{{blogModel.description}}</p>
+                <hr>
+            </div>
+            <h5>Comments</h5>
+            <div class="post" *ngFor="let comment of commentsList">
+                <div class="container">
+                    <span class="subreddit-info">
+                        Posted by <span class="username"> {{comment.userName}}</span>
+                        <span> on  {{comment.createdDate}}</span>
+                    </span>
+                    <div>
+                        <p class="post-text" style="padding-left: 40px;">{{comment.text}}</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+        </div>
+      </div>
+</div>
+

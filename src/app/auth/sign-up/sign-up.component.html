@@ -1,0 +1,48 @@
+        <div id="login">
+            <h3 class="text-center text-white pt-5">Register</h3>
+            <div class="container">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <form [formGroup]="signupForm" (ngSubmit)="signup()" id="login-form" class="form">
+                                <div class="form-group">
+                                    <label for="firstname" class="text-info">First Name:</label><br>
+                                    <input type="text" [formControlName]="'firstName'" name="firstname" id="firstname" class="form-control" required autofocus>
+                                    <!-- <span *ngIf="!signupForm.get('firstname').valid && signupForm.get('firstname').touched">Provide a valid first name</span> -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname" class="text-info">Last Name:</label><br>
+                                    <input type="text" [formControlName]="'lastName'"  id="lastname" class="form-control" required autofocus>
+                                    <!-- <span *ngIf="!signupForm.get('lastname').valid && signupForm.get('lastname').touched">Provide a valid last name</span> -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="text-info">E-mail:</label><br>
+                                    <input type="text" [formControlName]="'email'"  id="email" class="form-control" required autofocus>
+                                    <!-- <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">Provide a valid email</span> -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="username" class="text-info">Username:</label><br>
+                                    <input type="text" [formControlName]="'username'"  id="username" class="form-control" required autofocus>
+                                    <!-- <span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">Provide a valid username</span> -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="text-info">Password:</label><br>
+                                    <input type="password" [formControlName]="'password'"  id="password" class="form-control" required autofocus>
+                                    <!-- <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">Provide a valid password</span> -->
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="sign-up">
+                                        Sign Up
+                                    </button>
+                                    <span style="padding-left: 15px">Existing user? <a routerLink="/log-in">Log In</a></span>
+                                </div>
+                                <div class="login-failed" *ngIf='this.isError'>
+                                    <p class="login-failed-text">Sign up Failed. Please try again.</p>   
+                               </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

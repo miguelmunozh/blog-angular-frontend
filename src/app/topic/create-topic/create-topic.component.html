@@ -1,0 +1,28 @@
+<div id="login">
+    <h3 class="text-center text-white pt-5">Create Topic</h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form  id="login-form" [formGroup]="topicForm" class="form">
+                        <div class="form-group"> 
+                            <label for="title" class="text-info">Title:</label><br>
+                            <input type="text" [formControlName]="'title'"  id="title" class="form-control" required autofocus>
+                            <!-- <span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">Provide a valid username</span> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="text-info">Description:</label><br>
+                            <textarea type="text" [formControlName]="'description'" style="height:200px;"  id="description" class="form-control" required autofocus></textarea>
+                            <!-- <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">Provide a valid password</span> -->
+                        </div>
+
+                        <div class="form-group">
+                            <button (click)="discard()">Discard</button>
+                            <button (click)="createTopic()">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

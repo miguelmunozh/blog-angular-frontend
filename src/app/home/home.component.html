@@ -1,0 +1,40 @@
+
+<div class="blogsContainer">
+    <div class="header">
+        <h1>My Web Application To Write Blogs</h1>
+        <h5>My supercool header</h5>
+    </div>
+      <div class="row w-100">
+
+          <div class="col-md-3">
+            <div class="sidebar">
+                <h5>My supercool sidebar</h5>
+            </div>
+            <div class="sidebar-btn">
+                <button class="login mr-2 w-100 routerLink" routerLink="/Create-Topic">Create Topic Section</button>
+            </div>
+          </div>
+          
+        <div class="col-md-7"  >
+            <div class="post" *ngFor="let blog of blogs$">
+                <div class="container">
+                    <span class="subreddit-info">
+                        Posted by <span class="username"> {{blog.userName}}</span>
+                        <span> on  {{blog.createdDate}}</span>
+                    </span>
+                    <!-- /Create-Blog/{{blog.id}} THIS LINK ACTUALLY DOESNT GO THERE, THIS ONE IS FOR CREATING A POST/BLOG PASSING AS PARAM THE TOPIC IT BELONGS TO -->
+                    <div class="post-title">
+                        <a class="postname" href="" routerLink="/get-blogs/{{blog.title}}/{{blog.id}}">{{blog.title}}</a>
+                    </div>
+                    <hr />
+
+                    <div>
+                        <p class="post-text">{{blog.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    
+</div>
+
