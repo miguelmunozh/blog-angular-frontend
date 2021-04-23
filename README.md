@@ -1,6 +1,9 @@
-# AngularFrontend
+# blog-angular-frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+
+# Spring boot backend part of the application
+https://github.com/miguelmunozh/blog-springboot-backend.git
 
 ## Development server
 
